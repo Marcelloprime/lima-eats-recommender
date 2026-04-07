@@ -587,7 +587,7 @@ if st.session_state.recomendaciones is not None:
                     <hr style="border-color:#333;margin:8px 0">
                     <div style="display:flex;justify-content:space-between;align-items:center">
                         <span style="color:#ff6f61;font-weight:700;font-size:1.1rem">
-                            {row['rating_estimado']:.2f} ★ SVD
+                            {row['rating_estimado']:.2f} ★ Híbrido
                         </span>
                         <span style="color:#90caf9;font-size:0.8rem">
                             {stars_g:.1f}★ Google ({n_reviews:,})
@@ -640,7 +640,7 @@ if st.session_state.recomendaciones is not None:
                 map_data[['rank','title','district','rating_estimado','stars','lat','long']]
                 .rename(columns={
                     'rank':'#', 'title':'Restaurante', 'district':'Distrito',
-                    'rating_estimado':'Rating SVD', 'stars':'★ Google',
+                    'rating_estimado':'Rating modelo', 'stars':'★ Google',
                     'lat':'Latitud', 'long':'Longitud'
                 }),
                 hide_index=True,
@@ -683,7 +683,7 @@ if st.session_state.recomendaciones is not None:
                 edgecolors='white', linewidths=0.5
             )
             ax3.set_xlabel('Rating Google Maps', color='#90caf9')
-            ax3.set_ylabel('Rating estimado SVD', color='#90caf9')
+            ax3.set_ylabel('Rating estimado', color='#90caf9')
             ax3.set_xlim(1, 5.5)
             ax3.set_ylim(1, 5.5)
             ax3.spines['top'].set_visible(False)
